@@ -14,13 +14,13 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.10
+          python-version: "3.10"
 
       - name: Install dependencies
         run: pip install -r requirements.txt
 
       - name: Build Docs
-        run: sphinx-build -EWT build/html
+        run: sphinx-build -EWT docs build/html
 
       - name: Upload built docs as artifacts
         uses: actions/upload-artifact@v3
