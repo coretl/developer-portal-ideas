@@ -13,6 +13,8 @@ extensions = [
     "sphinx_design",
 ]
 
+myst_enable_extensions = ["colon_fence"]
+
 # If true, Sphinx will warn about all references where the target cannot
 # be found.
 nitpicky = True
