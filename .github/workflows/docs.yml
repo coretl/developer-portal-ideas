@@ -1,0 +1,39 @@
+name: Docs CI
+
+on: [push, pull_request]
+
+jobs:
+  docs:
+    # pull requests are a duplicate of a branch push if within the same repo.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build Docs
+        run: sphinx-build -EWT build/html
+
+      - name: Upload built docs as artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: docs
+          path: build
+
+      - name: Publish Docs to gh-pages
+        if: github.event_name == 'push' && github.ref_name == 'main'
+        # We pin to the SHA, not the tag, for security reasons.
+        # https://docs.github.com/en/actions/learn-github-actions/security-hardening-for-github-actions#using-third-party-actions
+        uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305 # v3.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build/html
+          keep_files: true
