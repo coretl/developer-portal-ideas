@@ -1,5 +1,7 @@
 # developer-portal-ideas
-Ideas on how the software developer guidelines and catalogue of repos might look
+Ideas on how the software developer guidelines and catalogue of repos might look.
+
+Visit https://coretl.github.io/developer-portal-ideas to see built docs.
 
 ## Building locally
 
