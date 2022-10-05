@@ -1,3 +1,0 @@
-# GUI Development Policy
-
-Stub

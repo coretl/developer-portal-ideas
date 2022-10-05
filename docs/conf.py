@@ -4,24 +4,26 @@
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-project = "developer-portal-ideas"
+project = "Developer Portal"
 
 extensions = [
     # Support markdown
     "myst_parser",
     # For the card element
     "sphinx_design",
+    # To allow the toc tree to be defined in a single file
+    "sphinx_external_toc",
 ]
 
+# Allow the ::::: syntax we use for grids
 myst_enable_extensions = ["colon_fence"]
+
+# Where to find the tox
+external_toc_path = "toc.yaml"
 
 # If true, Sphinx will warn about all references where the target cannot
 # be found.
 nitpicky = True
-
-# The name of a reST role (builtin or Sphinx extension) to use as the default
-# role, that is, for text marked up `like this`
-default_role = "any"
 
 # The master toctree document.
 master_doc = "index"
@@ -42,11 +44,12 @@ rst_epilog = """
 # a list of builtin themes.
 #
 html_theme = "pydata_sphinx_theme"
-github_repo = project
+github_repo = "developer-portal-ideas"
 github_user = "DiamondLightSource"
 
 # Theme options for pydata_sphinx_theme
 html_theme_options = dict(
+    show_nav_level=2,
     logo=dict(
         text=project,
     ),

@@ -5,13 +5,11 @@ Visit https://coretl.github.io/developer-portal-ideas to see built docs.
 
 ## Building locally
 
-To build the docs locally:
+To build the docs locally run:
 
 ```shell
-$ python3.9 -m venv venv
-$ source venv/bin/activate
-$ python3.9 -m pip install -r requirements.txt
-$ sphinx-build -WT docs build/html
+$ ./make.sh
 ```
 
+This will make a venv and pop-up a web browser pointing to a locally hosted version of the docs, auto-rebuilding and refreshing when you make changes to the source
 

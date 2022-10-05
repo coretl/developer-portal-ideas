@@ -1,0 +1,20 @@
+root: index
+entries:
+- file: catalogue/index
+- file: developer/index
+  entries:
+  - file: developer/tutorials
+    entries:
+    - glob: developer/tutorials/*
+  - file: developer/how-to
+    entries:
+    - glob: developer/how-to/*
+  - file: developer/explanations
+    entries:
+    - glob: developer/explanations/*
+  - file: developer/reference
+    entries:
+    - glob: developer/reference/*
+- file: guidelines/index
+  entries:
+  - glob: guidelines/*

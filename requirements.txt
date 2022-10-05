@@ -1,3 +1,4 @@
 myst-parser
 pydata-sphinx-theme
 sphinx-design
+sphinx-autobuild

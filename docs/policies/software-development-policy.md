@@ -1,3 +1,0 @@
-# Software Development Policy
-
-Stub

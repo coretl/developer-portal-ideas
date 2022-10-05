@@ -1,0 +1,3 @@
+# GUI Development Guidelines
+
+Stub
