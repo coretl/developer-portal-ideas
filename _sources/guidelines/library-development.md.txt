@@ -1,0 +1,3 @@
+# Library Development Guidelines
+
+Stub
